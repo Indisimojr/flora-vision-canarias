@@ -1,3 +1,7 @@
+# Recuperación de información.
 pandas
 python-dwca-reader
 scrapling
+
+# Entrenamiento del modelo.
+unsloth # También es necesario torch, con CUDA.
