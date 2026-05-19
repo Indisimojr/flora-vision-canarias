@@ -193,10 +193,10 @@ class CorpusContentScrapper(Spider):
                     markdown_content += add_markdown("header2", text)
 
             elif element.tag == "p":
-                if "foto" in element.text.get().lower():
+                if "foto" in element.text.getall().lower():
                     continue
-                    
-                plant_names = element.css("span.comun, span.cientifico")
+                
+                plant_names = element.css("span.comun, span.cientifico, span.cientifico > i")
                 if plant_names.get():
                     markdown_content += f"Nombre común: *{plant_names[0].text.get()}*\n"
                     markdown_content += f"Nombre científico: *{plant_names[1].text.get()}*\n"
@@ -205,8 +205,8 @@ class CorpusContentScrapper(Spider):
                 paragraph_content = element.css("::text").getall()
                 text = ""
                 for paragraph_text in paragraph_content:
-                    text += paragraph_text.strip()
-                        
+                    text += paragraph_text.strip() + " "
+                
                 markdown_content += add_markdown("paragraph", text)
             
         await self._save_file(markdown_content, full_path)
@@ -233,7 +233,7 @@ class CorpusContentScrapper(Spider):
         main_content = response.css(".com-content-article__body")
 
         main_header = main_content.css("p a *::text").getall() # El encabezado es un "p" con una "a" dentro y varios elementos más ("em", "strong"...).
-        main_header = "".join(main_header) # Esto nos devuelve solo el texto ya correctamente.
+        main_header = " ".join(main_header) # Esto nos devuelve solo el texto ya correctamente.
         markdown_content += add_markdown("header1", main_header)
 
         for element in main_content.css("div > span, div > strong > span"):
