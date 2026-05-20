@@ -5,3 +5,5 @@ scrapling
 
 # Entrenamiento del modelo.
 unsloth # También es necesario torch, con CUDA.
+scikit-learn
+matplotlib
