@@ -4,6 +4,7 @@ python-dwca-reader
 scrapling
 
 # Entrenamiento del modelo.
-unsloth # También es necesario torch, con CUDA.
+# También es necesario torch, con CUDA: `pip install torch --index-url https://download.pytorch.org/whl/cu130`
+unsloth
 scikit-learn
 matplotlib
