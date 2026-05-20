@@ -2,4 +2,4 @@
 data/
 **/__pycache__
 unsloth_compiled_cache/
-gemma4-plants-checkpoints/
+qwen3-vl-plants/
