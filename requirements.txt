@@ -8,3 +8,4 @@ scikit-learn
 # También es necesario torch con CUDA: `pip install torch --no-deps --force-reinstall --index-url https://download.pytorch.org/whl/cu130`
 unsloth
 matplotlib
+tensorboard
