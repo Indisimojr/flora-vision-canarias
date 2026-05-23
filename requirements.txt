@@ -9,3 +9,9 @@ scikit-learn
 unsloth
 matplotlib
 tensorboard
+
+# Creación de RAG.
+langchain
+langchain-openai
+langchain-chroma
+langchain-text-splitters

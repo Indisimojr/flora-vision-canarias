@@ -1,5 +1,7 @@
 .venv/
 data/
 **/__pycache__
+
 unsloth_compiled_cache/
 qwen3-vl-plants/
+chroma_db/
